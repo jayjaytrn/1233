@@ -1,0 +1,14 @@
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.exe
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.deps.json
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.runtimeconfig.json
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.runtimeconfig.dev.json
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.dll
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\ScrapMe!.pdb
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.csprojAssemblyReference.cache
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.AssemblyInfoInputs.cache
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.AssemblyInfo.cs
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.dll
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.pdb
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\HtmlAgilityPack.dll
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\bin\Debug\netcoreapp3.0\System.Xml.XPath.XmlDocument.dll
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.csproj.CopyComplete
