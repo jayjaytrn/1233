@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 
 namespace ScrapMe_
@@ -7,12 +8,11 @@ namespace ScrapMe_
     {
         static void Main(string[] args)
         {
-            Config config = new Config();
-            config.SiteToScrap = "https://zen.yandex.ru/";
-            config.Depth = 1;
-
             Runner runner = new Runner();
-            runner.GetLinksAndTitle(config);
+            HashSet<string> firstSite = new HashSet<string>();
+            firstSite.Add("https://zen.yandex.ru/");
+            runner.RunCircle(firstSite);
+            runner.Result();
         }
     }
 }

@@ -20,13 +20,19 @@ namespace ScrapMe_
             htmlSnippet.LoadHtml(html);
 
             List<string> hrefTags = new List<string>();
-
-            foreach (HtmlNode link in htmlSnippet.DocumentNode.SelectNodes("//a[@href]"))
+            HtmlNodeCollection snippet;
+            try
             {
-                HtmlAttribute att = link.Attributes["href"];
-                hrefTags.Add(att.Value);
+                foreach (HtmlNode link in htmlSnippet.DocumentNode.SelectNodes("//a[@href]"))
+                {
+                    HtmlAttribute att = link.Attributes["href"];
+                    hrefTags.Add(att.Value);
+                }
             }
-
+            catch
+            {
+                return null;
+            }
             return hrefTags;
         }
     }
