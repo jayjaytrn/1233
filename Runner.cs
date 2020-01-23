@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ScrapMe_
 {
@@ -11,44 +12,33 @@ namespace ScrapMe_
     {
         HtmlParser parser = new HtmlParser();
         List<string> TitlesBank = new List<string>();
-        byte depth = 1;
+        byte depth = 10;
         byte count = 0;
         public void Result()
         {
-            foreach (string title in TitlesBank)
-            {
-                Console.WriteLine(title);
-            }
+            var titles = TitlesBank;
+            (from t in titles.AsParallel()
+             select t)
+            .ForAll(Console.WriteLine);
             Console.ReadLine();
         }
         public void RunCircle(HashSet<string> hashSetLinks)
         {
             while(count <= depth)
             {
-                HashSet<string> hashSetLinsListForOneCircle = new HashSet<string>();
-                foreach (string link in hashSetLinks)
-                {
-                    HashSet<string> hashSet;
-                    try
-                    {
-                        hashSet = GetLinksAndAddTitles(link);
-                        hashSetLinsListForOneCircle.UnionWith(hashSet);
-                    }
-                    catch (Exception)
-                    {
-                        continue;
-                    }
-                }
+                var hashSetLinksListForOneCircle = hashSetLinks.AsParallel()
+                    .Select(site => GetLinksAndAddTitle(site))
+                    .Aggregate((megaset, set) => { 
+                        megaset.UnionWith(set); return megaset; }).ToHashSet();
                 count++;
-                RunCircle(hashSetLinsListForOneCircle);
+                RunCircle(hashSetLinksListForOneCircle);
             }
         }
-        private HashSet<string> GetLinksAndAddTitles(string link)
+        private HashSet<string> GetLinksAndAddTitle(string site)
         {
-
             try 
             { 
-                var responseStream = Response(link);
+                var responseStream = Response(site);
                 var responseString = StreamToStringConvert(responseStream);
                 var title = parser.GetHtmlTitle(responseString);
                 TitlesBank.Add(title);
@@ -57,9 +47,9 @@ namespace ScrapMe_
                 HashSet<string> hashSetLinks = new HashSet<string>(links);
                 return hashSetLinks;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return null;
+                return new HashSet<string>();
             }
             
         }
@@ -71,7 +61,7 @@ namespace ScrapMe_
             {
                 responseStream = ((HttpWebResponse)request.GetResponse()).GetResponseStream();
             }
-            catch
+            catch(Exception e)
             {
                 return null;
             }

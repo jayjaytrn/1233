@@ -25,3 +25,4 @@ C:\Users\salakhutdinov_mr\Desktop\1233\1233\obj\Debug\netcoreapp3.0\ScrapMe!.Ass
 C:\Users\salakhutdinov_mr\Desktop\1233\1233\obj\Debug\netcoreapp3.0\ScrapMe!.csproj.CopyComplete
 C:\Users\salakhutdinov_mr\Desktop\1233\1233\obj\Debug\netcoreapp3.0\ScrapMe!.dll
 C:\Users\salakhutdinov_mr\Desktop\1233\1233\obj\Debug\netcoreapp3.0\ScrapMe!.pdb
+C:\Users\Jay\source\repos\ConsoleApp2\ScrapMe!\obj\Debug\netcoreapp3.0\ScrapMe!.csprojAssemblyReference.cache
